@@ -1,37 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <link rel="stylesheet" href="https://github.com/itfoundry/Poppins">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../age-calculator/style/style.css">
+
+    <!-- JavaScript -->
+    <script src="../age-calculator/script/script.js"></script>
+
+    <title>Frontend Mentor | Age calculator app</title>
   
-  <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="input">
+        <form action="">
+          <div class="form-column">
+            <br><br><br><label for="">DAY</label>
+            <input type="text">
+          </div>
+          
+          <div class="form-column">
+            <label for="">MONTH</label>
+            <input type="text">
+          </div>
+          
+          <div class="form-column">
+            <label for="">YEAR</label>
+            <input type="text" name="YYYY" >
+          </div>
+          
+        </form>
+      </div><br>
+      
+      <div class="arrow">
+        <img src="../age-calculator/assets/images/icon-arrow.svg" alt="IMG">
+      </div>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Day
-  DD
-
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="answer">
+        <p><b>year</b></p>
+        <p><b>months</b></p>
+        <p><b>days</b></p>
+      </div>
+    </div>
+   
+    <!-- Signature -->
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
 </html>
