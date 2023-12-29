@@ -17,38 +17,70 @@
     <title>Frontend Mentor | Age calculator app</title>
   
   </head>
+
   <body>
     <div class="card">
       <div class="input">
         <form action="">
-          <div class="form-column">
-            <br><br><br><label for="">DAY</label>
-            <input type="text">
+          <div 
+            class="form-column">
+              <br><br><br>
+              <label for=""> DAY</label>
+              <input id="inputD" type="number" placeholder="DD">
           </div>
           
-          <div class="form-column">
-            <label for="">MONTH</label>
-            <input type="text">
+          <div 
+            class="form-column">
+              <label for=""> MONTH</label>
+              <input id="inputM" type="month" placeholder="MM">
           </div>
           
-          <div class="form-column">
-            <label for="">YEAR</label>
-            <input type="text" name="YYYY" >
+          <div 
+            class="form-column">
+              <label for="datemax" max="2023" > YEAR</label>
+              <input id="inputY" type="number" placeholder="YYYY" >
           </div>
           
         </form>
       </div><br>
       
+      <div class="line"></div>
+
       <div class="arrow">
-        <img src="../age-calculator/assets/images/icon-arrow.svg" alt="IMG">
+        <a 
+          onclick="getDOB()"
+            src="../age-calculator/assets/images/icon-arrow.svg" >
+              <img 
+                src="../age-calculator/assets/images/icon-arrow.svg" 
+                  alt="IMG">
+        </a>
       </div>
 
-      <div class="answer">
-        <p><b>year</b></p>
-        <p><b>months</b></p>
-        <p><b>days</b></p>
+      <div 
+        class="answer">
+          <div class="output">
+            <p id="outputY">--</p>
+              <p><b>years</b></p>
+          </div>
+          
+          <div
+            class="output">
+              <p id="outputM">--</p>
+                <p><b>months</b></p>
+          </div>
+
+          <div
+            class="output">
+              <p id="outputD">--</p>
+                <p><b>days</b></p>
+          </div>
       </div>
     </div>
+
+
+    <!-- Espaco para teste -->
+    
+    <button onclick="test()"> click here </button>
    
     <!-- Signature -->
     <div class="attribution">

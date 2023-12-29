@@ -66,6 +66,16 @@ input
       
 }
 
+.line
+{
+      width: 500px;
+      border: 1px solid;
+      position: relative;
+      top: 35px;
+      left: 25px;
+      color: #c3c3c3;
+}
+
 
 /*
 ** Answer 
@@ -79,10 +89,24 @@ input
 
 .answer p
 {
-      font-size: xx-large;
-      font-family: "Poppins-ExtraBoldItalic";
-      
+      font-size: 65px;
+      font-family: "Poppins-ExtraBoldItalic";      
 }
+
+.output
+{
+      display: flex;
+      height: 80px;
+      position: relative;
+      left: 80px;
+}
+
+#outputY
+{color: #844EF8;}
+#outputD
+{color: #844EF8;}
+#outputM
+{color: #844EF8;}
 
 
 
@@ -96,6 +120,8 @@ input
       font-size: 11px;
       text-align: center; 
       position: relative;
+      top: -200px;
+      right: -50px;
 }
 
 .attribution a 
