@@ -15,6 +15,17 @@ function test()
 
 function getDOB()
 {
+      //declare error message
+            //DAYS
+            var errorD28 = "Oops! This month has only 28 days.";
+            var errorD30 = "Oops! This month has only 30 days.";
+            var errorD31 = "Oops! This month has only 31 days.";
+            
+            //MONTH
+            var errorM = "Please enter a valid Month";
+            
+            //YEAR
+            var errorY = "Please enter a valid Year";
 
       //declare the day today
       const timeElapsed = Date.now();
@@ -30,7 +41,6 @@ function getDOB()
       let dayNumber = today.getDate();
 
       //INPUT
-
             //Year
             let inputY = document.getElementById('inputY');
             let outputY = document.getElementById('outputY');
@@ -44,12 +54,11 @@ function getDOB()
             let outputD = document.getElementById('outputD');
 
       //PROCESS
-
             //Year
             let resultY = yearNumber - inputY.value;
 
             //Month
-            let resultM = monthNumber - inputM.value + 1; //I needed to increment 1, 'cause the count go from 0 to 11.
+            let resultM = (inputM.value - 12 ) + ((monthNumber + 1) - inputM.value); //I needed to increment 1, 'cause the count go from 0 to 11.
 
             //Day
             var resultD = dayNumber - inputD.value;
@@ -58,31 +67,41 @@ function getDOB()
             //Year
             if(inputY.value > 2023 || inputY.value < 1)
             {
-                  alert("Oops! It looks like there's an issue in the year.");
-            }
+                  document.getElementById('errorY').innerHTML = errorY;
+                  document.getElementById('errorY').style.color = 'red';
+            }     
+            else
+            document.getElementById('errorY').innerHTML = " ";
             outputY.textContent = resultY;
 
             //Month
             if(inputM.value > 12 || inputM.value < 1)
             {
-                  alert("Oops! Invalid Month.");
+                  document.getElementById('errorM').innerHTML = errorM;
+                  document.getElementById('errorM').style.color = 'red';
+
             }
             else
+            document.getElementById('errorM').innerHTML = " ";
             outputM.textContent = resultM;
-            //i need to change the colour
+            //I need to change the colour
 
             //Day
             switch(parseInt(inputM.value))
             {
+                  //For months who has 31 days.
                   case 1: case 3: case 5: case 7: case 8: case 10: case 12:
                         if(inputD.value > 31)
                         {
-                             alert("Oops! This Month has only 30 days.")
-                             outputD.textContent = "!--";
-                             outputD.style.color = '#844DF8';
+                              document.getElementById('errorD').innerHTML = 
+                                    "Oops! This month has only 31 days.";
+
+                              document.getElementById('errorD').style.color = 'red';
                         }
                         else
                         {
+                              document.getElementById('errorD').innerHTML = " "
+
                               outputD.textContent = resultD;
                               outputD.style.color = '#844DF8';
                         }      
@@ -91,80 +110,38 @@ function getDOB()
                   case 2: 
                         if(inputD.value > 28)
                         {
-                              alert("Oops! This Month has only 28 days.")
-                              outputD.textContent = "-!-";
-                              outputD.style.color = '#844DF8';
+                              document.getElementById('errorD').innerHTML = 
+                                    "Oops! This month has only 28 days.";
+
+                              document.getElementById('errorD').style.color = 'red';
+            
                         }
                         else
                         {
+                              document.getElementById('errorD').innerHTML = " ";
+
                               outputD.textContent = resultD;
                               outputD.style.color = '#844DF8';
                         }
                   break;
 
-                  case 4: case 6: case 9: case 11: //there is a error!!!
-                        if(inputD.valeu > 30)
+                  case 4: case 6: case 9: case 11: //there is an error!!!
+                        if(inputD.value > 30)
                         {     
-                              alert("Oops! This Month has only 30 days.")
-                              outputD.textContent = "--!";
-                              outputD.style.color = '#844DF8';
+                              document.getElementById('errorD').innerHTML = 
+                                    "Oops! This month has only 30 days.";
+
+                              document.getElementById('errorD').style.color = 'red';
                         }
                         else
                         {
+                              document.getElementById('errorD').innerHTML = " ";
+
                               outputD.textContent = resultD;
                               outputD.style.color = '#844DF8';
                         }
 
-                  default:
+                  //default:
                         //outputD.textContent = resultD;      
-            }    
-            
-      
-      //test
-      //outputD.textContent = dayNumber;
-      
-      
+            }         
 }
-
-
-/*
-// START HERE
-function outputmonth()
-{
-      //getting input from html input element
-      let M = document.getElementById("inputM").value;
-
-      // Getting current date and calculating the difference 
-      let now = new Date(document.getElementById("cdate").value); 
-      console.log(now); 
-
-      let monthDiff = now.getMonth() - month; 
-
-      if (yearDiff < 0) console.log("invalid date"); 
-            else if 
-            (monthDiff > 0) 
-            { 
-                  console.log(yearDiff); 
-            } 
-            else if (monthDiff === 0 && dateDiff >= 0) 
-            { 
-                  console.log(yearDiff); 
-            } 
-            else 
-            { 
-                  yearDiff = yearDiff - 1; 
-                  if (monthDiff <= 0) 
-                  if (dateDiff > 0) monthDiff = 12 + monthDiff; 
-                  else monthDiff = 11 - monthDiff; 
-            } 
-            if (dateDiff < 0) { 
-                  dateDiff = 30 + dateDiff; 
-                  monthDiff -= 1; 
-            } 
-  
-
-
-}
-
-
-*/
