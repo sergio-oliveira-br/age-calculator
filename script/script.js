@@ -55,13 +55,13 @@ function getDOB()
 
       //PROCESS
             //Year
-            let resultY = yearNumber - inputY.value;
+            let resultY = yearNumber - inputY.value - 1;
 
             //Month
-            let resultM = (inputM.value - 12 ) + ((monthNumber + 1) - inputM.value); //I needed to increment 1, 'cause the count go from 0 to 11.
+            let resultM = ((12 - inputM.value) + (monthNumber)); //I needed to increment 1, 'cause the count go from 0 to 11.
 
             //Day
-            var resultD = dayNumber - inputD.value;
+            let resultD = (dayNumber - inputD.value) + 30; //need to consider the previous month to be right
 
       //OUTPUT
             //Year
